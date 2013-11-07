@@ -5,7 +5,7 @@ class delivery_date_order(osv.osv):
     _inherit='sale.order'
     
     columns = {
-        'delivery_date': fields.date('Delivery date'),
+        'delivery_date': fields.char('Delivery date'),
     }
     
 delivery_date_order()
