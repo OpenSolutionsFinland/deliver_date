@@ -1,5 +1,21 @@
 <openerp>
 		<data>
+	 	   <record model="ir.ui.view" id="sales_order_view_extension">
+	     		<field name="name">sale.order.form.inherit</field>
+	     		<field name="model">sale.order</field>
+	     		<field name="inherit_id" ref="sale.view_order_form"/>
+	     		<field name="arch" type="xml">
+	 				<data>
+	 					<xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+	 						<field name="delivery_date" string="Delivery"/>
+	 					</xpath>
+	 					<xpath expr="//field[@name='order_line']/form/group/group/field[@name='type']" position="before">
+	 						<field name="delivery_date" string="Delivery"/>
+	 					</xpath>
+	 				</data>
+	     		</field>
+	 		</record>
+			
 		   <record model="ir.ui.view" id="sales_order_line_view_extension">
                 <field name="name">sale.order.line.form.inherit</field>
                 <field name="model">sale.order.line</field>
